@@ -13,7 +13,7 @@ RUN apk add paper-icon-theme@testing
 RUN apk add lxappearance@testing
 
 ENV HOME /home/user
-RUN useradd --create-home --home-dir $HOME user \
+RUN adduser -h $HOME -D user \
 	&& chown -R user:user $HOME
 WORKDIR $HOME
 
