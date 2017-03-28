@@ -16,4 +16,5 @@ RUN adduser -h $HOME -D user \
 	&& chown -R user:user $HOME
 WORKDIR $HOME
 
-ENTRYPOINT [ "xfconf-query -c xfwm4 -p /general/theme -s Paper && startxfce4" ]
+COPY start.sh /usr/local/bin/start.sh
+ENTRYPOINT [ "/usr/local/bin/start.sh" ]
