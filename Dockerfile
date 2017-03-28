@@ -17,4 +17,4 @@ RUN adduser -h $HOME -D user \
 WORKDIR $HOME
 
 COPY start.sh /usr/local/bin/start.sh
-ENTRYPOINT [ "bash /usr/local/bin/start.sh" ]
+ENTRYPOINT [ "sh /usr/local/bin/start.sh" ]
