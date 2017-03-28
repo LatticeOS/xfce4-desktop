@@ -13,7 +13,7 @@ RUN apk add paper-icon-theme@testing
 RUN apk add lxappearance@testing
 
 ENV HOME /home/user
-RUN mkdir -p $HOME && echo -e "gtk-theme-name=\"Paper\" \ngtk-icon-theme-name=\"Paper\" \ngtk-font-name=\"Sans 10\"" > $HOME/.gtkrc-2.0.mine
+RUN mkdir -p $HOME && xfconf-query -c xfwm4 -p /general/theme -s “Paper”
 RUN adduser -h $HOME -D user \
 	&& chown -R user:user $HOME
 WORKDIR $HOME
