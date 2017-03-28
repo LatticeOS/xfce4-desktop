@@ -11,11 +11,9 @@ RUN apk add xfce4 paper-gtk-theme@testing paper-icon-theme@testing
 # RUN apk add lxappearance@testing
 
 ENV HOME /home/user
-RUN mkdir -p $HOME && \
-    xfconf-query -c xfwm4 -p /general/theme -s Paper
 COPY .gtkrc-2.0 $HOME/.gtkrc-2.0
 RUN adduser -h $HOME -D user \
 	&& chown -R user:user $HOME
 WORKDIR $HOME
 
-ENTRYPOINT [ "startxfce4" ]
+ENTRYPOINT [ "xfconf-query -c xfwm4 -p /general/theme -s Paper && startxfce4" ]
