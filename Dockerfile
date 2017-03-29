@@ -12,9 +12,10 @@ RUN apk add xfce4 paper-gtk-theme@testing paper-icon-theme@testing
 
 ENV HOME /home/user
 COPY .gtkrc-2.0 $HOME/.gtkrc-2.0
+COPY xsettings.xml $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+COPY xfwm4.xml $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 RUN adduser -h $HOME -D user \
 	&& chown -R user:user $HOME
 WORKDIR $HOME
 
-COPY start.sh /usr/local/bin/start.sh
-#ENTRYPOINT [ "sh /usr/local/bin/start.sh" ]
+ENTRYPOINT [ "startxfce4" ]
