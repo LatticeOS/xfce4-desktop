@@ -2,7 +2,7 @@
 
 This image meant for running a light weight desktop.
 
-![](https://www.diigo.com/file/image/ssdarodzdrsqosccczcrbpoebb/docker-desktop-vscode-libreoffice.jpg)
+![](https://www.diigo.com/file/image/ssdarodzdrsscdsbazcrbqepdr/xfce4-desktop.jpg)
 
 ## Deploy
 
