@@ -5,9 +5,10 @@ LABEL maintainer "Gitai<gitai.cn@gmail.com>"
 RUN echo "@edge http://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
     echo "@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 
-RUN apk update
-RUN apk add 
-RUN apk add xfce4 paper-gtk-theme@testing paper-icon-theme@testing 
+RUN apk update && \
+	apk add curl jq && \
+	apk add xfce4 paper-gtk-theme@testing paper-icon-theme@testing
+
 # RUN apk add lxappearance@testing
 
 ENV HOME /home/user
