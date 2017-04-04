@@ -18,7 +18,7 @@ COPY xfwm4.xml $HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
 RUN adduser -h $HOME -D user \
 	&& chown -R user:user $HOME
 
-RUN echo 'PATH=$PATH:/opt/lattice/bin' >> /etc/profile
+RUN echo 'PATH=$PATH:/opt/lattice/bin' >> /etc/profile && source /etc/profile
 
 WORKDIR $HOME
 
